@@ -35,7 +35,7 @@ export default function Home({eventos}) {
 }
 
 export async function getServerSideProps(){
-  const eventosRes = await axios.get('https://onlyfest-back.herokuapp.com/api/eventos/');
+  const eventosRes = await axios.get('https://onlyfest-back.herokuapp.com/api/eventos?populate=*');
 
   
   return {
