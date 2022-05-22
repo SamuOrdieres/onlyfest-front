@@ -1,6 +1,8 @@
 import axios from 'axios'
 import Head from 'next/head'
 import Image from 'next/image'
+import LatestEvents from '../components/LatestEvents'
+import EventsHeader from '../components/EventsHeader'
 import styles from '../styles/Home.module.css'
 
 export default function Home({eventos}) {
@@ -12,12 +14,9 @@ export default function Home({eventos}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>{eventos[0].attributes.Titulo}</h1>
-      <h4>{eventos[0].attributes.FechaInicio}</h4>
-      <h5>{eventos[0].attributes.DescripcionCorta}</h5>
-      <p>{eventos[0].attributes.Descripcion}</p>
-
-      
+      <EventsHeader />
+      <LatestEvents eventos={eventos.data}/>
+          
 
       <footer className={styles.footer}>
         <a
@@ -25,9 +24,9 @@ export default function Home({eventos}) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by:{' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image src="https://onlyfest.es//images/logo-black-horizontal.png" alt="OnlyFest Logo" width={72} height={36} />
           </span>
         </a>
       </footer>
@@ -41,7 +40,7 @@ export async function getServerSideProps(){
   
   return {
     props: {
-      eventos: eventosRes.data.data
+      eventos: eventosRes.data
     }
   }
 }
