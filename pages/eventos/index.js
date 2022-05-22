@@ -13,7 +13,7 @@ export default function Eventos({eventos}) {
 
 export async function getServerSideProps(){ //  --> For server side rendering purposes
     // export async function getStaticProps(){      --> For static page purposes
-    const postsRes = await axios.get("https://onlyfest-back.herokuapp.com/api/eventos/")
+    const postsRes = await axios.get("https://onlyfest-back.herokuapp.com/api/eventos?populate=*")
     
     
         return{

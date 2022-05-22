@@ -36,7 +36,7 @@ export async function getStaticProps({params}){
 
 export async function getStaticPaths(){
 
-    const postsRes = await axios.get("https://onlyfest-back.herokuapp.com/api/eventos/")
+    const postsRes = await axios.get("https://onlyfest-back.herokuapp.com/api/eventos?populate=*")
 
     const paths = postsRes.data.data.map((evento) => {
         return {params: {id: evento.id.toString()}}
