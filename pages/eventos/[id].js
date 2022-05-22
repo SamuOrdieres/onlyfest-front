@@ -29,7 +29,7 @@ export async function getStaticProps({params}){
 
     return{
         props: {
-            post: postsRes.data
+            evento: postsRes.data
         }
     }
 }
