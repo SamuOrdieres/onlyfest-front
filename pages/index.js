@@ -24,7 +24,7 @@ export default function Home({eventos}) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by:{' '}
+          Powred by:{' '}
           <span className={styles.logo}>
             <Image src="https://onlyfest.es//images/logo-black-horizontal.png" alt="OnlyFest Logo" width={72} height={36} />
           </span>
