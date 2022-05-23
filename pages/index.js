@@ -13,10 +13,25 @@ export default function Home({eventos}) {
         <meta name="description" content="OnlyFest. Tus planes y eventos están aquí." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <main className={styles.main}>
       <EventsHeader />
       <LatestEvents eventos={eventos.data}/>
+
+      {/* INICIO DEL NUEVO CONTENIDO FORMATEADO */}
+      
+      <h6 className={styles.description}>
+                    Welcome to <a href="https://nextjs.org">
+                        Next.js!</a> integrated with{" "}
+                    <a href="https://mui.com/">Material-UI!</a>
+                </h6>
+                <p className={styles.description}>
+                    Get started by editing{" "}
+                    <code className={styles.code}>
+                        pages/index.js</code>
+                </p>
           
+      {/* FIN DEL NUEVO CONTENIDO FORMATEADO */}
+
 
       <footer className={styles.footer}>
         <a
@@ -30,6 +45,7 @@ export default function Home({eventos}) {
           </span>
         </a>
       </footer>
+      </main>
     </div>
   )
 }
