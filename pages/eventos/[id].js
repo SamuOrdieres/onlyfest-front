@@ -1,6 +1,8 @@
+import * as React from 'react';
 import axios from 'axios'
-import React from 'react'
 import MarkdownIt from 'markdown-it'
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 
 export default function EventPage({evento}) {
@@ -10,18 +12,42 @@ export default function EventPage({evento}) {
     const htmlContent = md.render(evento.data.attributes.Descripcion)
 
   return (
-    <article>
+      <>
+      <article>
         <header>
             <h1>{evento.data.attributes.Titulo}</h1>
             <h2>{evento.data.attributes.DescripcionCorta}</h2>
 
         </header>
-        <section dangerouslySetInnerHTML={{ __html: htmlContent}}>
+    <Box
+    sx={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      '& > :not(style)': {
+        m: 1,
+        width: 500,
+        height: 500,
+        padding: 2
+      },
+    }}
+  >
+    <Paper elevation={3}>
+    <section dangerouslySetInnerHTML={{ __html: htmlContent}}>
         </section>
+    </Paper>
+  </Box>
+  
+        
+        
 
     </article>
+
+    </>
   )
 }
+
+
+
 
 export async function getStaticProps({params}){
 
@@ -47,6 +73,7 @@ export async function getStaticPaths(){
         fallback: false
     }
 }
+
 
 
 /*
