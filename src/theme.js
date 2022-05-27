@@ -25,10 +25,10 @@ theme = createTheme(theme, {
 	},
 	palette: {
 		primary: {
-			main: '#556cd6',
+			main: '#cc00f5',
 		},
 		secondary: {
-			main: '#19857b',
+			main: '#00f3be',
 		},
 		error: {
 			main: red.A400,
