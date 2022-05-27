@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 // Create a theme instance.
-const defaultTheme = createTheme({
+let theme = createTheme({
 	breakpoints: {
 		values: {
 		  mobile: 0,
@@ -14,7 +14,15 @@ const defaultTheme = createTheme({
 	
 });
 
-const theme = createTheme({
+theme = createTheme(theme, {
+	breakpoints: {
+		values: {
+		  mobile: 0,
+		  tablet: 640,
+		  laptop: 1024,
+		  desktop: 1200,
+		},
+	},
 	palette: {
 		primary: {
 			main: '#556cd6',
@@ -45,23 +53,43 @@ const theme = createTheme({
 			styleOverrides:{
 				root:{
 					marginBottom: '2rem',
-					[defaultTheme.breakpoints.up('mobile')]: {
+					[theme.breakpoints.up('mobile')]: {
 						maxWidth: 300
 					},
-					[defaultTheme.breakpoints.up('tablet')]: {
+					[theme.breakpoints.up('tablet')]: {
 						maxWidth: 500					  
 					},
-					[defaultTheme.breakpoints.up('laptop')]: {
+					[theme.breakpoints.up('laptop')]: {
 						maxWidth: 800					
 					},
-					[defaultTheme.breakpoints.up('desktop')]: {
+					[theme.breakpoints.up('desktop')]: {
 						maxWidth: 1200					  
 					}
 				}
 			}
-		}
+		},
+		MuiTextField: {
+			variants: [
+				{
+				  props: { variant: 'search' },
+				  style: {
+					[theme.breakpoints.up('mobile')]: {
+						maxWidth: 300
+					},
+					[theme.breakpoints.up('tablet')]: {
+						maxWidth: 500					  
+					},
+					[theme.breakpoints.up('laptop')]: {
+						maxWidth: 800					
+					},
+					[theme.breakpoints.up('desktop')]: {
+						maxWidth: 1200					  
+					}
+				  },
+			},
+		]
 	},
-})
+}})
 
 
 

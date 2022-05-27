@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import EventPreview from './EventPreview'
-import { TextField, Typography, Chip, Stack, Paper } from '@mui/material'
+import { styled } from '@mui/material/styles';
+import { TextField,  Paper } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
-import AllEvents from './AllEvents'
 import FilterCategories from './FilterCategories'
 
 export default function SearchEvents({eventos, categorias}) {
@@ -11,6 +10,20 @@ export default function SearchEvents({eventos, categorias}) {
     const [searchString, setSearchString] = useState('')
     const [filteredEvents, setFilteredEvents] = useState(eventos)
     const [eventTitles, setEventTitles] = useState(eventos.map((evento) => evento.attributes.Titulo.toLowerCase()))
+    const Root = styled('div')(({ theme }) => ({
+        [theme.breakpoints.up('mobile')]: {
+            maxWidth: 300
+        },
+        [theme.breakpoints.up('tablet')]: {
+            maxWidth: 500
+        },
+        [theme.breakpoints.up('laptop')]: {
+            maxWidth: 800
+        },
+        [theme.breakpoints.up('desktop')]: {
+            maxWidth: 1200
+          },
+      }));
 
 
     useEffect(() => {
@@ -30,9 +43,8 @@ export default function SearchEvents({eventos, categorias}) {
 
     return (
         <>
-            <Paper component='form' sx={{ width: 400, margin: '20px auto', boxShadow: 0}}>
+            <Paper component='form' sx={{ margin: '20px auto', boxShadow: 0, display: 'flex'}}>
                 <TextField 
-                style={{ width:400 }} 
                 placeholder='Buscar' 
                 value={searchString} 
                 onChange={(e) => setSearchString(e.target.value)}
@@ -40,8 +52,9 @@ export default function SearchEvents({eventos, categorias}) {
                     {{startAdornment: (
                         <SearchIcon style={{ fontSize: 30, marginRight: 8 }} />
                     ),
-                    style: {fontSize: 20}
+                    style: {fontSize: 15}
                 }}
+                variant='outlined'
                 >
                 </TextField>
 

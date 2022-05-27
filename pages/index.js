@@ -5,6 +5,7 @@ import LatestEvents from '../components/LatestEvents'
 import EventsHeader from '../components/EventsHeader'
 import styles from '../styles/Home.module.css'
 
+
 export default function Home({eventos}) {
   return (
     <div className={styles.container}>
