@@ -113,6 +113,7 @@ const ResponsiveAppBar = () => {
             >
               {["left"].map((anchor) => (
                 <IconButton
+                  key={anchor}
                   size="large"
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
