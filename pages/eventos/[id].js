@@ -1,48 +1,14 @@
 import * as React from 'react';
 import axios from 'axios'
-import MarkdownIt from 'markdown-it'
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+import EventPage from '../../components/Events/EventPage'
 
-
-export default function EventPage({evento}) {
-    const md = new MarkdownIt({
-        html:false
-    })
-    const htmlContent = md.render(evento.data.attributes.Descripcion)
+export default function Evento({evento}) {
+    
 
   return (
-      <>
-      <article>
-        <header>
-            <h1>{evento.data.attributes.Titulo}</h1>
-            <h2>{evento.data.attributes.DescripcionCorta}</h2>
-
-        </header>
-    <Box
-    sx={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      '& > :not(style)': {
-        m: 1,
-        width: 500,
-        height: 500,
-        padding: 2
-      },
-    }}
-  >
-    <Paper elevation={3}>
-    <section dangerouslySetInnerHTML={{ __html: htmlContent}}>
-        </section>
-    </Paper>
-  </Box>
-  
-        
-        
-
-    </article>
-
-    </>
+     <>
+      <EventPage evento={evento}></EventPage>
+     </>
   )
 }
 
@@ -51,11 +17,11 @@ export default function EventPage({evento}) {
 
 export async function getStaticProps({params}){
 
-    const postsRes = await axios.get(`https://onlyfest-back.herokuapp.com/api/eventos/${params.id}`)
+    const postsRes = await axios.get(`https://onlyfest-back.herokuapp.com/api/eventos/${params.id}?populate=*`)
 
     return{
         props: {
-            evento: postsRes.data
+            evento: postsRes.data.data
         }
     }
 }

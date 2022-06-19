@@ -30,7 +30,7 @@ return (
     <>
 
     <Paper sx={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '20px auto', boxShadow: 0 }}>
-            <Stack direction='row' spacing={1}>
+        <Stack direction='row' spacing={1}>
             <Chip onClick={() => { setCategories([]); setIsAllCategories(true) }} label='Todo' variant='outlined' color={isAllCategories ? 'secondary' : 'default'} />
             {categorias.map((category) => (
                 <>

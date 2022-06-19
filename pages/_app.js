@@ -1,5 +1,3 @@
-import NavBar from '../components/NavBar'
-
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
@@ -8,6 +6,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
+
+
+import NavBar from '../components/Shared/NavBar'
+import Footer from '../components/Shared/Footer';
 
 // Client-side cache shared for the whole session 
 // of the user in the browser.
@@ -33,6 +35,7 @@ export default function MyApp(props) {
               <CssBaseline />
               <NavBar />
               <Component {...pageProps} />
+              <Footer />
           </ThemeProvider>
       </CacheProvider>
   );

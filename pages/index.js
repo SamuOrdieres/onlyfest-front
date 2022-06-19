@@ -1,8 +1,7 @@
 import axios from 'axios'
 import Head from 'next/head'
-import Image from 'next/image'
-import LatestEvents from '../components/LatestEvents'
-import EventsHeader from '../components/EventsHeader'
+import LatestEvents from '../components/Events/LatestEvents'
+import EventsHeader from '../components/Events/EventsHeader'
 import styles from '../styles/Home.module.css'
 
 
@@ -19,18 +18,6 @@ export default function Home({eventos}) {
       <LatestEvents eventos={eventos.data}/>
 
      
-      <footer className={styles.footer}>
-        <a
-          href="https://samuordieres.com?utm_source=onlyfest&utm_medium=onlyfest-web&utm_campaign=footer-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by:{' '}
-          <span className={styles.logo}>
-            <Image src="https://onlyfest.es//images/logo-black-horizontal.png" alt="OnlyFest Logo" width={72} height={36} />
-          </span>
-        </a>
-      </footer>
       </main>
     </div>
   )

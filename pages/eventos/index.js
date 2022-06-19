@@ -1,10 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import AllEvents from '../../components/AllEvents'
 import axios from 'axios'
-import SearchEvents from '../../components/SearchEvents'
-import FilterCategories from '../../components/FilterCategories'
+import SearchEvents from '../../components/Events/SearchEvents'
 import styles from '../../styles/Search.module.css'
+import Footer from '../../components/Shared/Footer'
 
 export default function Eventos({eventos, categorias}) {
   return (
@@ -18,6 +17,7 @@ export default function Eventos({eventos, categorias}) {
       <main className={styles.main}>
           <SearchEvents eventos={eventos.data} categorias={categorias.data} />
       </main>
+      <Footer />
       </div>
   )
 }
