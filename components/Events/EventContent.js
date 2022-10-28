@@ -34,9 +34,9 @@ export default function EventContent({ evento }) {
             srcSet={`
               ${evento.attributes.ImagenPrincipal.data.attributes.formats.thumbnail.url} 245w,
               ${evento.attributes.ImagenPrincipal.data.attributes.formats.small.url} 500w,
-              ${evento.attributes.ImagenPrincipal.data.attributes.formats.medium.url} 750w,
+              ${evento.attributes.ImagenPrincipal.data.attributes.formats.medium.url} 750w
               `}
-            //  ${evento.attributes.ImagenPrincipal.data.attributes.formats.large.url} 1000w
+            // ${evento.attributes.ImagenPrincipal.data.attributes.formats.large.url} 1000w
 
             alt={evento.attributes.Titulo}
             loading="lazy"
