@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import moment from "moment";
 import "moment/locale/es";
+import Image from "next/image";
 
 export default function EventContent({ evento }) {
   moment.locale("es");
