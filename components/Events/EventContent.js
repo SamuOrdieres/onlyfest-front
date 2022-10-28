@@ -28,7 +28,9 @@ export default function EventContent({ evento }) {
       >
         <ImageListItem key={evento.attributes.ImagenPrincipal.data.id} cols={1}>
           <Image
-            src={`${evento.attributes.ImagenPrincipal.data.attributes.formats.large.url}`}
+            src={`${evento.attributes.ImagenPrincipal.data.attributes.formats.medium.url}`}
+            //  src={`${evento.attributes.ImagenPrincipal.data.attributes.formats.large.url}`}
+
             srcSet={`
               ${evento.attributes.ImagenPrincipal.data.attributes.formats.thumbnail.url} 245w,
               ${evento.attributes.ImagenPrincipal.data.attributes.formats.small.url} 500w,
