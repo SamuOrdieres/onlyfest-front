@@ -27,7 +27,7 @@ export default function EventContent({ evento }) {
         cols={1}
       >
         <ImageListItem key={evento.attributes.ImagenPrincipal.data.id} cols={1}>
-          <Image
+          <img
             src={`${evento.attributes.ImagenPrincipal.data.attributes.formats.medium.url}`}
             //  src={`${evento.attributes.ImagenPrincipal.data.attributes.formats.large.url}`}
 
