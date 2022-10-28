@@ -10,15 +10,15 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by:{" "}
-        <span className={styles.logo}>
+        Powered by: Onlyfest{" "}
+        {/* <span className={styles.logo}>
           <Image
             src="https://onlyfest.es/images/logo-black-horizontal.png"
             alt="OnlyFest Logo"
             width={72}
             height={36}
           />
-        </span>
+        </span> */}
       </a>
     </footer>
   );
