@@ -17,7 +17,7 @@ export default function Home({ eventos }) {
       </Head>
       <main className={styles.main}>
         <EventsHeader />
-        <LatestEvents eventos={eventos} />
+        <LatestEvents eventos={eventos.data} />
       </main>
     </div>
   );
